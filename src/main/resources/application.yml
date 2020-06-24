@@ -1,0 +1,29 @@
+
+server:
+  servlet:
+    session:
+      timeout: 60
+  port: 8812
+
+spring:
+  datasource:
+    url: jdbc:sqlite:/home/fish/IdeaProjects/J2EE/IOT_SpaceDetection/Rpi_IOT.db
+    username:
+    password:
+    driver-class-name: org.sqlite.JDBC
+    filters: stat,slf4j,config
+  #thymeleaf配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+
+# MyBatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*DAO.xml
+  type-aliases-package: cn.james.rpi.entity
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
